@@ -825,7 +825,7 @@ console.log('%c exercise #61:',
 
 const getSequence = ( n1, n2 ) => {
   let res =[]
-    for(let i =n1; i <= n2; i++){
+    for(let i = n1; i <= n2; i++){
       res.push(i)
     }
   return res;
@@ -845,6 +845,18 @@ console.log(hurdleJump([1, 2, 3, 4, 5], 5)) // -> true
 console.log(hurdleJump([5, 5, 3, 4, 5], 3)) // -> false
 console.log(hurdleJump([5, 4, 5, 6], 10)) // -> true
 console.log(hurdleJump([1, 2, 1], 1)) // -> false
+
+console.log('%c exercise #63:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const additiveInverse = arr => arr.map(e => e * -1)
+
+
+console.log(additiveInverse([5, -7, 8, 3])) // ➞ [-5, 7, -8, -3]
+console.log(additiveInverse([1, 1, 1, 1, 1])) // ➞ [-1, -1, -1, -1, -1]
+console.log(additiveInverse([-5, -25, 35])) // ➞ [5, 25, -35]
+
+
 
 
 // ########################################
