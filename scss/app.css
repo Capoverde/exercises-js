@@ -1,0 +1,245 @@
+/* variables */
+/* mixins */
+/* reset */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html,
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: #161616;
+  color: #eee;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: 62.5%;
+  text-rendering: optimizeSpeed;
+  scroll-behavior: smooth; }
+
+a:not([class]) {
+  text-decoration-skip-ink: auto; }
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block; }
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em; }
+
+input,
+button,
+textarea,
+select {
+  font: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important; } }
+/* vendors */
+/* google fonts */
+/* globals */
+header {
+  background: #000000;
+  width: 100%;
+  padding: 5rem 0; }
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  text-align: center; }
+
+h1 {
+  font-size: 3rem; }
+
+h2 {
+  font-size: 2rem; }
+
+h3 {
+  font-size: 1.5rem; }
+
+p,
+li,
+span,
+a,
+button {
+  font-size: 1.3rem; }
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  color: inherit; }
+  a:hover {
+    color: #ff0000; }
+
+ul {
+  list-style: none; }
+
+button {
+  background: transparent;
+  color: inherit;
+  padding: 1rem 2rem;
+  border-color: #eee;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 1px; }
+  button:hover {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    color: #ff0000;
+    border-color: #ff0000;
+    transform: scale(0.96); }
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  height: 100%; }
+  @media (max-width: 700px) {
+    .container {
+      width: 85%; } }
+
+.row {
+  width: 100%;
+  padding: 1.2rem 0; }
+
+/* components */
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 1.2rem 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #303030; }
+  @media (max-width: 700px) {
+    .navbar {
+      padding: 1rem; } }
+  .navbar__list {
+    position: absolute;
+    top: -2000%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: column;
+    background: #000;
+    transition: all 0.45s ease-in;
+    -webkit-transition: all 0.45s ease-in;
+    -moz-transition: all 0.45s ease-in;
+    -ms-transition: all 0.45s ease-in;
+    -o-transition: all 0.45s ease-in; }
+  .navbar__item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.45s ease-in;
+    -webkit-transition: all 0.45s ease-in;
+    -moz-transition: all 0.45s ease-in;
+    -ms-transition: all 0.45s ease-in;
+    -o-transition: all 0.45s ease-in; }
+    .navbar__item:hover {
+      background: #3a3a3a; }
+  .navbar__link {
+    font-size: 5rem; }
+    .navbar__link--active {
+      color: #ff0000; }
+    @media (max-width: 992px) {
+      .navbar__link {
+        font-size: 2rem; } }
+  .navbar .logo {
+    z-index: 9999; }
+    .navbar .logo i {
+      font-size: 2rem;
+      z-index: 9999; }
+
+.menu-btn {
+  position: fixed;
+  right: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden; }
+  .menu-btn__burger {
+    width: 30px;
+    height: 2px;
+    background: #eee;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    transition: all 0.5s ease-in-out; }
+    .menu-btn__burger::before, .menu-btn__burger::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background: #eee;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+      transition: all 0.45s ease-in-out;
+      -webkit-transition: all 0.45s ease-in-out;
+      -moz-transition: all 0.45s ease-in-out;
+      -ms-transition: all 0.45s ease-in-out;
+      -o-transition: all 0.45s ease-in-out; }
+    .menu-btn__burger::before {
+      transform: translateY(-8px);
+      -webkit-transform: translateY(-8px);
+      -moz-transform: translateY(-8px);
+      -ms-transform: translateY(-8px);
+      -o-transform: translateY(-8px); }
+    .menu-btn__burger::after {
+      transform: translateY(8px);
+      -webkit-transform: translateY(8px);
+      -moz-transform: translateY(8px);
+      -ms-transform: translateY(8px);
+      -o-transform: translateY(8px); }
+
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  -webkit-transform: translateX(-50px);
+  -moz-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  -o-transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none; }
+  .menu-btn.open .menu-btn__burger::before, .menu-btn.open .menu-btn__burger::after {
+    background: #ff0000; }
+  .menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+    -webkit-transform: rotate(45deg) translate(35px, -35px);
+    -moz-transform: rotate(45deg) translate(35px, -35px);
+    -ms-transform: rotate(45deg) translate(35px, -35px);
+    -o-transform: rotate(45deg) translate(35px, -35px); }
+  .menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+    -webkit-transform: rotate(-45deg) translate(35px, 35px);
+    -moz-transform: rotate(-45deg) translate(35px, 35px);
+    -ms-transform: rotate(-45deg) translate(35px, 35px);
+    -o-transform: rotate(-45deg) translate(35px, 35px); }
+
+.openNav {
+  top: 0;
+  left: 0; }
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,86 @@
+//#############################################
+//#################  globals   ################
+//#############################################
+
+header {
+  background: #000000;
+  width: 100%;
+  padding: 5rem 0;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p,
+li,
+span,
+a,
+button {
+  font-size: 1.3rem;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  color: inherit;
+
+  &:hover {
+    color: $link-hover-c;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background: $btn-bg;
+  color: inherit;
+  padding: 1rem 2rem;
+  border-color: $main-c;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    color: $link-hover-c;
+    border-color: $link-hover-c;
+    transform: scale(0.96);
+  }
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  height: 100%;
+
+  @media (max-width: 700px) {
+    width: 85%;
+  }
+}
+
+.row {
+  width: 100%;
+  padding: 1.2rem 0;
+}
