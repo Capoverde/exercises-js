@@ -807,6 +807,35 @@ console.log(getFillings(["bread", "ham", "cheese", "ham", "bread"])) //  ["ham",
 console.log(getFillings(["bread", "sausage", "tomato", "bread"])) //  ["sausage", "tomato"]
 console.log(getFillings(["bread", "lettuce", "bacon", "tomato", "bread"])) // ➞ ["lettuce", "bacon", "tomato"]
 
+console.log('%c exercise #60:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const countdown = n => {
+  let res =[]
+  for(i=0; i <= n; i++){ res.push(i)}
+  return res.reverse();
+}
+
+console.log(countdown(5)) // [5, 4, 3, 2, 1, 0]
+console.log(countdown(1)) // [1, 0]
+console.log(countdown(0)) //  [0]
+
+console.log('%c exercise #61:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const getSequence = ( n1, n2 ) => {
+  let res =[]
+    for(let i =n1; i <= n2; i++){
+      res.push(i)
+    }
+  return res;
+}
+
+
+console.log(getSequence(1, 5)) // -> [1, 2, 3, 4, 5]
+console.log(getSequence(98,100)) // ➞ [98, 99, 100]
+console.log(getSequence(1000,1000)) // ➞ [1000]
+
 
 
 // ########################################
