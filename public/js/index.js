@@ -836,6 +836,15 @@ console.log(getSequence(1, 5)) // -> [1, 2, 3, 4, 5]
 console.log(getSequence(98,100)) // ➞ [98, 99, 100]
 console.log(getSequence(1000,1000)) // ➞ [1000]
 
+console.log('%c exercise #62:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const hurdleJump = ( arr, n ) => arr.sort((a,b) => b - a)[0] <= n 
+
+console.log(hurdleJump([1, 2, 3, 4, 5], 5)) // -> true
+console.log(hurdleJump([5, 5, 3, 4, 5], 3)) // -> false
+console.log(hurdleJump([5, 4, 5, 6], 10)) // -> true
+console.log(hurdleJump([1, 2, 1], 1)) // -> false
 
 
 // ########################################
