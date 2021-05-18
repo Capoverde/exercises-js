@@ -998,7 +998,28 @@ console.log(existsHigher([1, 2, 3, 4, 5], 8)) // false
 console.log(existsHigher([4, 3, 3, 3, 2, 2, 2], 4)) // true
 console.log(existsHigher([], 5)) // false
 
+console.log('%c exercise #76:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
 
+const mod = ( arr, n ) => arr.map(e => e % n)
+
+
+console.log(mod([5, 7, 8, 2, 1], 2)) // ➞ [1, 1, 0, 0, 1]
+console.log(mod([9, 8, 16, 47], 4)) // ➞ [1, 0, 0, 3]
+console.log(mod([17, 11, 99, 55, 23, 1], 5)) // ➞ [2, 1, 4, 0, 3, 1]
+console.log(mod([6, 1], 7)) // ➞ [6, 1]
+console.log(mod([3, 2, 9], 3)) // [0, 2, 0]
+console.log(mod([48, 22, 0, 19, 33, 100], 10)) // ➞ [8, 2, 0, 9, 3, 0]
+
+console.log('%c exercise #77:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const filterDigitLength = ( arr, n ) => arr.map(el => el.toString()).filter(e => e.length == n).map(ee => Number(ee))
+
+console.log(filterDigitLength([88, 232, 4, 9721, 555], 3)) // ➞ [232, 555]
+console.log(filterDigitLength([2, 7, 8, 9, 1012], 1)) // ➞ [2, 7, 8, 9]
+console.log(filterDigitLength([32, 88, 74, 91, 300, 4050], 1)) // ➞ []
+console.log(filterDigitLength([5, 6, 8, 9], 1)) //  ➞ [5, 6, 8, 9]
 
 // ########################################
 }) // <----DOMContentLoaded close brackets
