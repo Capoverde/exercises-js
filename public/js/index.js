@@ -919,5 +919,54 @@ console.log(deNest([[[[[[[[[[[[3]]]]]]]]]]]])) // -> 3
 console.log(deNest([[[[[[[true]]]]]]])) // -> true
 console.log(deNest([[[[[[[[[[[[[[[[["edabit"]]]]]]]]]]]]]]]]])) // ➞ "edabit"
 
+console.log('%c exercise #70:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+// const getDiscounts = ( arr, n ) => {
+
+//   let obj = {
+//      "50%": 0.5,
+//      "75%": 0.75,
+//      "45%": 0.45
+//   }[n]
+
+
+//   return arr.map(e=> e * obj[n])
+// }
+
+// console.log(getDiscounts([2, 4, 6, 11], "50%")) // ➞ [1, 2, 3, 5.5]
+// console.log(getDiscounts([10, 20, 40, 80], "75%")) // ➞ [7.5, 15, 30, 60]
+// console.log(getDiscounts([100], "45%")) // ➞ [45]
+
+console.log('%c exercise #71:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const filterStateNames = ( arr, str ) => arr.filter(e => str == 'abb' ? e.length < 3 : str == 'full' ? e.length > 3 : false)
+
+console.log(filterStateNames(["Arizona", "CA", "NY", "Nevada"], "abb")) // ➞ ["CA", "NY"]
+console.log(filterStateNames(["Arizona", "CA", "NY", "Nevada"], "full")) // ➞ ["Arizona", "Nevada"]
+console.log(filterStateNames(["MT", "NJ", "TX", "ID", "IL"], "abb")) // ➞ ["MT", "NJ", "TX", "ID", "IL"]
+console.log(filterStateNames(["MT", "NJ", "TX", "ID", "IL"], "full")) // -> []
+
+console.log('%c exercise #72:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const repeat = ( s, n ) => {
+  let arr = []
+  for(i=0; i < n; i++){
+    arr.push(s)
+  }
+  return arr;
+}
+
+
+console.log(repeat("edabit", 3)) // ➞ ["edabit", "edabit", "edabit"]
+console.log(repeat(13, 5)) // ➞ [13, 13, 13, 13, 13]
+console.log(repeat("7", 2)) // ➞ ["7", "7"]
+console.log(repeat(0, 0)) // ➞ []
+
+
+
 // ########################################
 }) // <----DOMContentLoaded close brackets
