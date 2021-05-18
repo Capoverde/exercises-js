@@ -856,7 +856,50 @@ console.log(additiveInverse([5, -7, 8, 3])) // ➞ [-5, 7, -8, -3]
 console.log(additiveInverse([1, 1, 1, 1, 1])) // ➞ [-1, -1, -1, -1, -1]
 console.log(additiveInverse([-5, -25, 35])) // ➞ [5, 25, -35]
 
+console.log('%c exercise #64:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
 
+const nthSmallest = ( arr, n ) => {
+  let sli= arr.slice(n-1)
+  return sli.reduce((a,b) => Math.min(a,b))
+}
+
+console.log(nthSmallest([1, 3, 5, 7], 1)) // -> 1
+console.log(nthSmallest([1, 3, 5, 7], 3)) // -> 5
+console.log(nthSmallest([1, 3, 5, 7], 2)) // -> 3
+console.log(nthSmallest([7, 3, 5, 1], 2)) // -> 3
+
+
+console.log('%c exercise #65:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+const findSmallestNum = arr => arr.sort((a,b)=> a - b)[0]
+
+console.log(findSmallestNum([34, 15, 88, 2])) // -> 2
+console.log(findSmallestNum([34, -345, -1, 100])) // -> -345
+console.log(findSmallestNum([-76, 1.345, 1, 0])) // -76
+console.log(findSmallestNum([0.4356, 0.8795, 0.5435, -0.9999])) // -> -0.999
+console.log(findSmallestNum([7, 7, 7])) // -> 7
+
+console.log('%c exercise #66:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const multiplyByLength = arr => arr.map(e=> e * arr.length)
+
+console.log(multiplyByLength([2, 3, 1, 0])) // ➞ [8, 12, 4, 0]
+console.log(multiplyByLength([4, 1, 1])) // ➞ ([12, 3, 3])
+console.log(multiplyByLength([1, 0, 3, 3, 7, 2, 1])) // -> [7, 0, 21, 21, 49, 14, 7]
+console.log(multiplyByLength([0])) // -> [0]
+
+console.log('%c exercise #67:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const removeNull = arr => arr.filter(e => e !== null)
+
+console.log(removeNull(["a", null, "b", null])) // ➞ ["a", "b"]
+console.log(removeNull([null, null, null, null, null])) // ➞ []
+console.log(removeNull([7, 8, null, 9])) // ➞ [7, 8, 9]
 
 
 // ########################################
