@@ -976,6 +976,28 @@ console.log(returnOnlyInteger(["hello", 81, "basketball", 123, "fox"])) // ➞ [
 console.log(returnOnlyInteger([10, "121", 56, 20, "car", 3, "lion"])) // ➞ [10, 56, 20, 3]
 console.log(returnOnlyInteger(["String",  true,  3.3,  1])) // ➞ [1]
 
+console.log('%c exercise #74:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const convertCartesian = ( a1, a2 ) => {
+   let res =[]
+  return res;
+}
+
+console.log(convertCartesian([1, 5, 3, 3, 4], [5, 8, 9, 1, 0])) // ➞ [[1, 5], [5, 8], [3, 9], [3, 1], [4, 0]]
+console.log(convertCartesian([9, 8, 3], [1, 1, 1])) // ➞ [[9, 1], [8, 1], [3, 1]]
+
+
+console.log('%c exercise #75:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const existsHigher = ( arr, n ) => arr.filter(e => e >= n ? true : false)
+
+console.log(existsHigher([5, 3, 15, 22, 4], 10)) // true
+console.log(existsHigher([1, 2, 3, 4, 5], 8)) // false
+console.log(existsHigher([4, 3, 3, 3, 2, 2, 2], 4)) // true
+console.log(existsHigher([], 5)) // false
+
 
 
 // ########################################
