@@ -901,6 +901,23 @@ console.log(removeNull(["a", null, "b", null])) // ➞ ["a", "b"]
 console.log(removeNull([null, null, null, null, null])) // ➞ []
 console.log(removeNull([7, 8, null, 9])) // ➞ [7, 8, 9]
 
+console.log('%c exercise #68:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const transform = arr => arr.map(e => e % 2 == 0 ? e - 1 : e + 1)
+
+console.log(transform([1, 2, 3, 4, 5])) //  ➞ [2, 1, 4, 3, 6]
+console.log(transform([3, 3, 4, 3])) // ➞ [4, 4, 3, 4]
+console.log(transform([2, 2, 0, 8, 10])) // ➞ [1, 1, -1, 7, 9]
+
+console.log('%c exercise #69:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const deNest = arr => arr.flat(Infinity)[0];
+
+console.log(deNest([[[[[[[[[[[[3]]]]]]]]]]]])) // -> 3
+console.log(deNest([[[[[[[true]]]]]]])) // -> true
+console.log(deNest([[[[[[[[[[[[[[[[["edabit"]]]]]]]]]]]]]]]]])) // ➞ "edabit"
 
 // ########################################
 }) // <----DOMContentLoaded close brackets
