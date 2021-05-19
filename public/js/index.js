@@ -1038,7 +1038,41 @@ const sum = arr => arr.reduce((a,b)=>a+b)
 console.log(sum([1, 2, 3, 4])) // -> 10
 console.log(sum([1, 2])) // -> 3
 console.log(sum([1])) // -> 1
-console.log(sum([])) // -> 0
+// console.log(sum([])) // -> 0
+
+console.log('%c exercise #80:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const rogerShots = arr => {
+
+  let res = 0;
+
+  for(let i =0; i <arr.length; i++){
+      if(arr[i] === "Bang!" || arr[i] === "BangBang!"){
+        res += 0.5;
+      }
+  }
+  return res;
+}
+
+console.log(rogerShots(["Bang!", "Bang!", "Bang!", "Bang!", "Bang!", "Bang!"])) // -> 3
+console.log(rogerShots(["Bang!", "Bang!", "Bang!", "Bang!", "BangBang!"])) // -> 2.5
+console.log(rogerShots(["Bang!", "BangBangBang!", "Boom!", "Bang!", "BangBang!", "BangBang!"])) // -> 2
+
+console.log('%c exercise #81:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const minMax = arr => {
+  let sor = arr.sort((a,b) => a - b)
+  return [sor[0], sor[sor.length -1]]
+}
+
+
+console.log(minMax([1, 2, 3, 4, 5])) // ➞ [1, 5]
+console.log(minMax([2334454, 5])) // ➞ [5, 2334454]
+console.log(minMax([1])) // ➞ [1, 1]
+
+
 
 // ########################################
 }) // <----DOMContentLoaded close brackets
