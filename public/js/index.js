@@ -1077,7 +1077,13 @@ console.log('%c exercise #82:',
 'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
 
 const canNest = ( a1, a2 ) => {
-  return Math.max(a1)
+  let max1 = a1.sort((a,b)=>a-b).slice(-1)
+  let min1 = a1.sort((a,b)=>a-b)[0]
+  let max2 = a2.sort((a,b)=>a-b).slice(-1)
+  let min2 = a2.sort((a,b)=>a-b)[0]
+
+  (min1 > min2 && max1 < max2) ? true : false;
+ 
 }
 
 console.log(canNest([1, 2, 3, 4], [0, 6])) // ➞ false
