@@ -1065,6 +1065,7 @@ console.log('%c exercise #81:',
 const minMax = arr => {
   let sor = arr.sort((a,b) => a - b)
   return [sor[0], sor[sor.length -1]]
+  // return Array(sor[0], sor[sor.length -1])
 }
 
 
@@ -1072,7 +1073,17 @@ console.log(minMax([1, 2, 3, 4, 5])) // ➞ [1, 5]
 console.log(minMax([2334454, 5])) // ➞ [5, 2334454]
 console.log(minMax([1])) // ➞ [1, 1]
 
+console.log('%c exercise #82:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
 
+const canNest = ( a1, a2 ) => {
+  return Math.max(a1)
+}
+
+console.log(canNest([1, 2, 3, 4], [0, 6])) // ➞ false
+console.log(canNest([3, 1], [4, 0])) // ➞ true
+console.log(canNest([9, 9, 8], [8, 9])) // false
+console.log(canNest([1, 2, 3, 4], [2, 3])) // false
 
 // ########################################
 }) // <----DOMContentLoaded close brackets
