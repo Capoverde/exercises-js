@@ -1014,12 +1014,31 @@ console.log(mod([48, 22, 0, 19, 33, 100], 10)) // ➞ [8, 2, 0, 9, 3, 0]
 console.log('%c exercise #77:', 
 'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
 
-const filterDigitLength = ( arr, n ) => arr.map(el => el.toString()).filter(e => e.length == n).map(ee => Number(ee))
+const filterDigitLength = ( arr, n ) => arr.map(e => e.toString()).filter(e => e.length == n).map(e => Number(e))
 
 console.log(filterDigitLength([88, 232, 4, 9721, 555], 3)) // ➞ [232, 555]
 console.log(filterDigitLength([2, 7, 8, 9, 1012], 1)) // ➞ [2, 7, 8, 9]
 console.log(filterDigitLength([32, 88, 74, 91, 300, 4050], 1)) // ➞ []
 console.log(filterDigitLength([5, 6, 8, 9], 1)) //  ➞ [5, 6, 8, 9]
+
+console.log('%c exercise #78:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const mirror = arr =>  arr.concat(arr.slice(0, -1).reverse());
+
+console.log(mirror([0, 2, 4, 6])) // ➞ [0, 2, 4, 6, 4, 2, 0]
+console.log(mirror([1, 2, 3, 4, 5])) // ➞ [1, 2, 3, 4, 5, 4, 3, 2, 1]
+console.log(mirror([3, 5, 6, 7, 8])) // ➞ [3, 5, 6, 7, 8, 7, 6, 5, 3]
+
+console.log('%c exercise #79:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const sum = arr => arr.reduce((a,b)=>a+b)
+
+console.log(sum([1, 2, 3, 4])) // -> 10
+console.log(sum([1, 2])) // -> 3
+console.log(sum([1])) // -> 1
+console.log(sum([])) // -> 0
 
 // ########################################
 }) // <----DOMContentLoaded close brackets
