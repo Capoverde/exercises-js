@@ -818,5 +818,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   console.log(makeRug(3, 5, '$'))
 
+  console.log('%c exercise #67:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
 // ########################################
 }) // <----DOMContentLoaded close brackets
