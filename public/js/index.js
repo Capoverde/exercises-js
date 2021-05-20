@@ -1096,7 +1096,6 @@ console.log('%c exercise #84:',
 
 const getExtension = arr => arr.map(e => e.split('.').pop())
 
-
 console.log(getExtension(["code.html", "code.css"])) // ➞ ["html", "css"]
 console.log(getExtension(["project1.jpg", "project1.pdf", "project1.mp3"])) // ➞ ["jpg", "pdf", "mp3"]
 console.log(getExtension(["ruby.rb", "cplusplus.cpp", "python.py", "javascript.js"])) // ➞ ["rb", "cpp", "py", "js"]
