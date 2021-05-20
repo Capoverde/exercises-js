@@ -1076,20 +1076,32 @@ console.log(minMax([1])) // ➞ [1, 1]
 console.log('%c exercise #82:', 
 'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
 
-const canNest = ( a1, a2 ) => {
-  let max1 = a1.sort((a,b)=>a-b).slice(-1)
-  let min1 = a1.sort((a,b)=>a-b)[0]
-  let max2 = a2.sort((a,b)=>a-b).slice(-1)
-  let min2 = a2.sort((a,b)=>a-b)[0]
+// const canNest = ( a1, a2 ) => {
+//   let max1 = a1.sort((a,b)=>a-b).slice(-1)
+//   let min1 = a1.sort((a,b)=>a-b)[0]
+//   let max2 = a2.sort((a,b)=>a-b).slice(-1)
+//   let min2 = a2.sort((a,b)=>a-b)[0]
 
-  (min1 > min2 && max1 < max2) ? true : false;
+//   (min1 > min2 && max1 < max2) ? true : false;
  
-}
+// }
 
-console.log(canNest([1, 2, 3, 4], [0, 6])) // ➞ false
-console.log(canNest([3, 1], [4, 0])) // ➞ true
-console.log(canNest([9, 9, 8], [8, 9])) // false
-console.log(canNest([1, 2, 3, 4], [2, 3])) // false
+// console.log(canNest([1, 2, 3, 4], [0, 6])) // ➞ false
+// console.log(canNest([3, 1], [4, 0])) // ➞ true
+// console.log(canNest([9, 9, 8], [8, 9])) // false
+// console.log(canNest([1, 2, 3, 4], [2, 3])) // false
+
+console.log('%c exercise #84:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const getExtension = arr => arr.map(e => e.split('.').pop())
+
+
+console.log(getExtension(["code.html", "code.css"])) // ➞ ["html", "css"]
+console.log(getExtension(["project1.jpg", "project1.pdf", "project1.mp3"])) // ➞ ["jpg", "pdf", "mp3"]
+console.log(getExtension(["ruby.rb", "cplusplus.cpp", "python.py", "javascript.js"])) // ➞ ["rb", "cpp", "py", "js"]
+
+
 
 // ########################################
 }) // <----DOMContentLoaded close brackets
