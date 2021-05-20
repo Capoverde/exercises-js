@@ -1062,5 +1062,14 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log(arraySum([2, 3, 4, 5])) // ➞ 23.97
   console.log(arraySum([1, 31, 3, 11, 0])) // ➞ 11.62
 
+  console.log('%c exercise #84:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const integerBool = str => str.split('').map(e => Number(e)).map(e => e ? true : false)
+
+  console.log(integerBool('100101')) // ➞ [true, false, false, true, false, true]
+  console.log(integerBool('10')) // ➞ [true, false]
+  console.log(integerBool('001')) // ➞ [false, false, true]
+
 // ########################################
 }) // <----DOMContentLoaded close brackets
