@@ -816,10 +816,251 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const makeRug = (m, n, s = '#') => Array(m).fill(s.repeat(n))
 
-  console.log(makeRug(3, 5, '$'))
+  console.log('%c exercise #64:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const nthSmallest = (arr, n) => {
+    const sli = arr.slice(n - 1)
+    return sli.reduce((a, b) => Math.min(a, b))
+  }
+
+  console.log(nthSmallest([1, 3, 5, 7], 1)) // -> 1
+  console.log(nthSmallest([1, 3, 5, 7], 3)) // -> 5
+  console.log(nthSmallest([1, 3, 5, 7], 2)) // -> 3
+  console.log(nthSmallest([7, 3, 5, 1], 2)) // -> 3
+
+  console.log('%c exercise #65:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const findSmallestNum = arr => arr.sort((a, b) => a - b)[0]
+
+  console.log(findSmallestNum([34, 15, 88, 2])) // -> 2
+  console.log(findSmallestNum([34, -345, -1, 100])) // -> -345
+  console.log(findSmallestNum([-76, 1.345, 1, 0])) // -76
+  console.log(findSmallestNum([0.4356, 0.8795, 0.5435, -0.9999])) // -> -0.999
+  console.log(findSmallestNum([7, 7, 7])) // -> 7
+
+  console.log('%c exercise #66:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const multiplyByLength = arr => arr.map(e => e * arr.length)
+
+  console.log(multiplyByLength([2, 3, 1, 0])) // ➞ [8, 12, 4, 0]
+  console.log(multiplyByLength([4, 1, 1])) // ➞ ([12, 3, 3])
+  console.log(multiplyByLength([1, 0, 3, 3, 7, 2, 1])) // -> [7, 0, 21, 21, 49, 14, 7]
+  console.log(multiplyByLength([0])) // -> [0]
 
   console.log('%c exercise #67:',
     'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const removeNull = arr => arr.filter(e => e !== null)
+
+  console.log(removeNull(['a', null, 'b', null])) // ➞ ["a", "b"]
+  console.log(removeNull([null, null, null, null, null])) // ➞ []
+  console.log(removeNull([7, 8, null, 9])) // ➞ [7, 8, 9]
+
+  console.log('%c exercise #68:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const transform = arr => arr.map(e => e % 2 == 0 ? e - 1 : e + 1)
+
+  console.log(transform([1, 2, 3, 4, 5])) //  ➞ [2, 1, 4, 3, 6]
+  console.log(transform([3, 3, 4, 3])) // ➞ [4, 4, 3, 4]
+  console.log(transform([2, 2, 0, 8, 10])) // ➞ [1, 1, -1, 7, 9]
+
+  console.log('%c exercise #69:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const deNest = arr => arr.flat(Infinity)[0]
+
+  console.log(deNest([[[[[[[[[[[[3]]]]]]]]]]]])) // -> 3
+  console.log(deNest([[[[[[[true]]]]]]])) // -> true
+  console.log(deNest([[[[[[[[[[[[[[[[['edabit']]]]]]]]]]]]]]]]])) // ➞ "edabit"
+
+  console.log('%c exercise #70:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  // const getDiscounts = ( arr, n ) => {
+
+  //   let obj = {
+  //      "50%": 0.5,
+  //      "75%": 0.75,
+  //      "45%": 0.45
+  //   }[n]
+
+  //   return arr.map(e=> e * obj[n])
+  // }
+
+  // console.log(getDiscounts([2, 4, 6, 11], "50%")) // ➞ [1, 2, 3, 5.5]
+  // console.log(getDiscounts([10, 20, 40, 80], "75%")) // ➞ [7.5, 15, 30, 60]
+  // console.log(getDiscounts([100], "45%")) // ➞ [45]
+
+  console.log('%c exercise #71:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const filterStateNames = (arr, str) => arr.filter(e => str == 'abb' ? e.length < 3 : str == 'full' ? e.length > 3 : false)
+
+  console.log(filterStateNames(['Arizona', 'CA', 'NY', 'Nevada'], 'abb')) // ➞ ["CA", "NY"]
+  console.log(filterStateNames(['Arizona', 'CA', 'NY', 'Nevada'], 'full')) // ➞ ["Arizona", "Nevada"]
+  console.log(filterStateNames(['MT', 'NJ', 'TX', 'ID', 'IL'], 'abb')) // ➞ ["MT", "NJ", "TX", "ID", "IL"]
+  console.log(filterStateNames(['MT', 'NJ', 'TX', 'ID', 'IL'], 'full')) // -> []
+
+  console.log('%c exercise #72:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const repeat = (s, n) => {
+    const arr = []
+    for (i = 0; i < n; i++) {
+      arr.push(s)
+    }
+    return arr
+  }
+
+  console.log(repeat('edabit', 3)) // ➞ ["edabit", "edabit", "edabit"]
+  console.log(repeat(13, 5)) // ➞ [13, 13, 13, 13, 13]
+  console.log(repeat('7', 2)) // ➞ ["7", "7"]
+  console.log(repeat(0, 0)) // ➞ []
+
+  console.log('%c exercise #73:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const returnOnlyInteger = arr => arr.filter(Number.isInteger)
+
+  console.log(returnOnlyInteger([9, 2, 'space', 'car', 'lion', 16])) // ➞ [9, 2, 16]
+  console.log(returnOnlyInteger(['hello', 81, 'basketball', 123, 'fox'])) // ➞ [81, 123]
+  console.log(returnOnlyInteger([10, '121', 56, 20, 'car', 3, 'lion'])) // ➞ [10, 56, 20, 3]
+  console.log(returnOnlyInteger(['String', true, 3.3, 1])) // ➞ [1]
+
+  console.log('%c exercise #74:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const convertCartesian = (a1, a2) => {
+    const res = []
+    return res
+  }
+
+  console.log(convertCartesian([1, 5, 3, 3, 4], [5, 8, 9, 1, 0])) // ➞ [[1, 5], [5, 8], [3, 9], [3, 1], [4, 0]]
+  console.log(convertCartesian([9, 8, 3], [1, 1, 1])) // ➞ [[9, 1], [8, 1], [3, 1]]
+
+  console.log('%c exercise #75:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const existsHigher = (arr, n) => arr.filter(e => e >= n)
+
+  console.log(existsHigher([5, 3, 15, 22, 4], 10)) // true
+  console.log(existsHigher([1, 2, 3, 4, 5], 8)) // false
+  console.log(existsHigher([4, 3, 3, 3, 2, 2, 2], 4)) // true
+  console.log(existsHigher([], 5)) // false
+
+  console.log('%c exercise #76:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const mod = (arr, n) => arr.map(e => e % n)
+
+  console.log(mod([5, 7, 8, 2, 1], 2)) // ➞ [1, 1, 0, 0, 1]
+  console.log(mod([9, 8, 16, 47], 4)) // ➞ [1, 0, 0, 3]
+  console.log(mod([17, 11, 99, 55, 23, 1], 5)) // ➞ [2, 1, 4, 0, 3, 1]
+  console.log(mod([6, 1], 7)) // ➞ [6, 1]
+  console.log(mod([3, 2, 9], 3)) // [0, 2, 0]
+  console.log(mod([48, 22, 0, 19, 33, 100], 10)) // ➞ [8, 2, 0, 9, 3, 0]
+
+  console.log('%c exercise #77:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const filterDigitLength = (arr, n) => arr.map(e => e.toString()).filter(e => e.length == n).map(e => Number(e))
+
+  console.log(filterDigitLength([88, 232, 4, 9721, 555], 3)) // ➞ [232, 555]
+  console.log(filterDigitLength([2, 7, 8, 9, 1012], 1)) // ➞ [2, 7, 8, 9]
+  console.log(filterDigitLength([32, 88, 74, 91, 300, 4050], 1)) // ➞ []
+  console.log(filterDigitLength([5, 6, 8, 9], 1)) //  ➞ [5, 6, 8, 9]
+
+  console.log('%c exercise #78:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const mirror = arr => arr.concat(arr.slice(0, -1).reverse())
+
+  console.log(mirror([0, 2, 4, 6])) // ➞ [0, 2, 4, 6, 4, 2, 0]
+  console.log(mirror([1, 2, 3, 4, 5])) // ➞ [1, 2, 3, 4, 5, 4, 3, 2, 1]
+  console.log(mirror([3, 5, 6, 7, 8])) // ➞ [3, 5, 6, 7, 8, 7, 6, 5, 3]
+
+  console.log('%c exercise #79:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const sum = arr => arr.reduce((a, b) => a + b)
+
+  console.log(sum([1, 2, 3, 4])) // -> 10
+  console.log(sum([1, 2])) // -> 3
+  console.log(sum([1])) // -> 1
+  // console.log(sum([])) // -> 0
+
+  console.log('%c exercise #80:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const rogerShots = arr => {
+    let res = 0
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === 'Bang!' || arr[i] === 'BangBang!') {
+        res += 0.5
+      }
+    }
+    return res
+  }
+
+  console.log(rogerShots(['Bang!', 'Bang!', 'Bang!', 'Bang!', 'Bang!', 'Bang!'])) // -> 3
+  console.log(rogerShots(['Bang!', 'Bang!', 'Bang!', 'Bang!', 'BangBang!'])) // -> 2.5
+  console.log(rogerShots(['Bang!', 'BangBangBang!', 'Boom!', 'Bang!', 'BangBang!', 'BangBang!'])) // -> 2
+
+  console.log('%c exercise #81:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const minMax = arr => {
+    const sor = arr.sort((a, b) => a - b)
+    return [sor[0], sor[sor.length - 1]]
+  // return Array(sor[0], sor[sor.length -1])
+  }
+
+  console.log(minMax([1, 2, 3, 4, 5])) // ➞ [1, 5]
+  console.log(minMax([2334454, 5])) // ➞ [5, 2334454]
+  console.log(minMax([1])) // ➞ [1, 1]
+
+  console.log('%c exercise #82:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  // const canNest = ( a1, a2 ) => {
+  //   let max1 = a1.sort((a,b)=>a-b).slice(-1)
+  //   let min1 = a1.sort((a,b)=>a-b)[0]
+  //   let max2 = a2.sort((a,b)=>a-b).slice(-1)
+  //   let min2 = a2.sort((a,b)=>a-b)[0]
+
+  //   (min1 > min2 && max1 < max2) ? true : false;
+
+  // }
+
+  // console.log(canNest([1, 2, 3, 4], [0, 6])) // ➞ false
+  // console.log(canNest([3, 1], [4, 0])) // ➞ true
+  // console.log(canNest([9, 9, 8], [8, 9])) // false
+  // console.log(canNest([1, 2, 3, 4], [2, 3])) // false
+
+  console.log('%c exercise #84:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const getExtension = arr => arr.map(e => e.split('.').pop())
+
+  console.log(getExtension(['code.html', 'code.css'])) // ➞ ["html", "css"]
+  console.log(getExtension(['project1.jpg', 'project1.pdf', 'project1.mp3'])) // ➞ ["jpg", "pdf", "mp3"]
+  console.log(getExtension(['ruby.rb', 'cplusplus.cpp', 'python.py', 'javascript.js'])) // ➞ ["rb", "cpp", "py", "js"]
+
+  console.log(makeRug(3, 5, '$'))
+
+  console.log('%c exercise #83:',
+    'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+  const arraySum = arr => arr.map(e => e % 2 == 0 ? Math.pow(e, 2) : Math.sqrt(e, 2)).reduce((a, b) => a + b).toFixed(2)
+
+  console.log(arraySum([1, 3, 3, 1, 10])) // ➞ 105.46
+  console.log(arraySum([2, 3, 4, 5])) // ➞ 23.97
+  console.log(arraySum([1, 31, 3, 11, 0])) // ➞ 11.62
 
 // ########################################
 }) // <----DOMContentLoaded close brackets
