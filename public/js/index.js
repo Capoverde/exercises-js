@@ -1101,6 +1101,25 @@ console.log(getExtension(["project1.jpg", "project1.pdf", "project1.mp3"])) // â
 console.log(getExtension(["ruby.rb", "cplusplus.cpp", "python.py", "javascript.js"])) // âžž ["rb", "cpp", "py", "js"]
 
 
+console.log('%c exercise #85:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const checkFactors = ( arr,  n ) => {
+
+  for(i = 0; i < arr.length; i++){
+      if(n % arr[i]) return false;
+  }
+  return true
+}
+
+
+console.log(checkFactors([2, 3, 4], 12)) // -> true
+console.log(checkFactors([1, 2, 3, 8], 12)) // -> false
+console.log(checkFactors([1, 2, 50], 100)) // -> true
+console.log(checkFactors([3, 6], 9)) // -> false
+
+
+
 
 // ########################################
 }) // <----DOMContentLoaded close brackets
