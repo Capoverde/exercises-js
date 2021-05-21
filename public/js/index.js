@@ -1090,6 +1090,48 @@ console.log(checkFactors([3, 6], 9)) // -> false
   console.log(integerBool('10')) // ➞ [true, false]
   console.log(integerBool('001')) // ➞ [false, false, true]
 
+  console.log('%c exercise #86:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const sumOfCubes = arr => arr.map(e => Math.pow(e,3)).reduce(( a , b ) => a + b)
+
+console.log(sumOfCubes([1, 5, 9])) //  ➞ 855
+console.log(sumOfCubes([3, 4, 5])) // ➞ 216
+console.log(sumOfCubes([2])) // ➞ 8
+// console.log(sumOfCubes([])) // ➞ 0
+
+
+console.log('%c exercise #87:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const getOnlyEvens = arr => arr.filter(( e, i ) => e % 2 == 0 && i % 2 == 0)
+
+console.log(getOnlyEvens([1, 3, 2, 6, 4, 8])) // ➞ [2, 4]
+console.log(getOnlyEvens([0, 1, 2, 3, 4])) // ➞ [0, 2, 4]
+console.log(getOnlyEvens([1, 2, 3, 4, 5])) //  ➞ []
+
+console.log('%c exercise #88:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const sortByLength = arr => arr.sort(( a, b ) => a.length - b.length)
+
+console.log(sortByLength(["Google", "Apple", "Microsoft"])) // ➞ ["Apple", "Google", "Microsoft"]
+console.log(sortByLength(["Leonardo", "Michelangelo", "Raphael", "Donatello"])) // ➞ ["Raphael", "Leonardo", "Donatello", "Michelangelo"]
+console.log(sortByLength(["Turing", "Einstein", "Jung"])) // ➞ ["Jung", "Turing", "Einstein"]
+
+console.log('%c exercise #89:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const isAvgWhole = arr => {
+ const avg =  arr.reduce(( a, b) => a + b ) / arr.length;
+ return Number.isInteger(avg) 
+} 
+
+console.log(isAvgWhole([1, 3])) // true
+console.log(isAvgWhole([1, 2, 3, 4])) // false
+console.log(isAvgWhole([1, 5, 6])) // true
+console.log(isAvgWhole([1, 1, 1])) // true
+console.log(isAvgWhole([9, 2, 2, 5])) // false
 
 // ########################################
 }) // <----DOMContentLoaded close brackets
