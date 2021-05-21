@@ -1079,7 +1079,6 @@ const checkFactors = ( arr,  n ) => {
   return true
 }
 
-
 console.log(checkFactors([2, 3, 4], 12)) // -> true
 console.log(checkFactors([1, 2, 3, 8], 12)) // -> false
 console.log(checkFactors([1, 2, 50], 100)) // -> true
@@ -1132,6 +1131,13 @@ console.log(isAvgWhole([1, 2, 3, 4])) // false
 console.log(isAvgWhole([1, 5, 6])) // true
 console.log(isAvgWhole([1, 1, 1])) // true
 console.log(isAvgWhole([9, 2, 2, 5])) // false
+
+console.log('%c exercise #90:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+
+
 
 // ########################################
 }) // <----DOMContentLoaded close brackets
