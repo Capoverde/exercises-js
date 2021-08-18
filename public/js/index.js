@@ -1,6 +1,5 @@
-document.addEventListener('DOMContentLoaded', function () {
-  console.log('%c DOM FULLY LOADED AND PARSED', 'color:#bada55; background: #000000; padding:20px; margin:10px 0 10px 550px; border-radius: 5px; font-weight:bold;')
 
+  
   // variables:
   const navlist = document.querySelector('.navbar__list')
   const menuBtn = document.querySelector('.menu-btn')
@@ -1135,9 +1134,130 @@ console.log(isAvgWhole([9, 2, 2, 5])) // false
 console.log('%c exercise #90:', 
 'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
 
+const mean = arr => Number((arr.reduce(( a, b ) => a + b ) / arr.length).toFixed(1))
+
+console.log(mean([1, 6, 6, 7, 8, 8, 9, 10, 10])) // ➞ 7.2
+console.log(mean([1, 3, 8, 9, 9, 10])) // ➞ 6.7
+console.log(mean([2, 3, 3, 6, 6, 8, 9, 10])) // ➞ 5.9
+
+
+console.log('%c exercise #91:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const minimumRemovals= arr => arr.reduce(( a, b ) => a + b) % 2 == 0 ? 0 : 1;
+
+console.log(minimumRemovals([1, 2, 3, 4, 5])) // -> 1
+console.log(minimumRemovals([5, 7, 9, 11])) // -> 0
+console.log(minimumRemovals([5, 7, 9, 12])) // -> 1
+
+
+console.log('%c exercise #92:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+ const oddElim = odd => odd.filter(e=>e%2==0)
+
+console.log(oddElim([1, 2, 3, 4, 5, 6]))
+
+
+console.log('%c exercise #93:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const onlynum = arr => arr.filter( e => typeof e == 'number' )
+
+
+console.log(onlynum(['text', 3, 7, 'github', 13, 'dev']))
+
+
+console.log('%c exercise #94:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+const minmaxlengthavg = arr => {
+  let sorted = arr.sort((a,b) => a - b)
+  let min = sorted[0]
+  let max =sorted[sorted.length -1]
+  let len = sorted.length;
+   return `the minimum number is ${min}, the maximum number is ${max}, the length is ${len}`
+}
+
+console.log(minmaxlengthavg([1,2,5,39,4]))
+
+console.log('%c exercise #95:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+
+const sumabs = arr => arr.map(e => Math.abs(e)).reduce((a,b) => a +b)
+
+
+console.log(sumabs([-1, -3, -5, -4, -10, 0])) // 23
+
+console.log('%c exercise #96:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const multiplyByLen = arr => arr.map(e => e * arr.length)
+
+
+console.log(multiplyByLen([4,2,3])) // 12, 6, 9
+
+// ===================== algorythms ========================= //
+
+
+console.log('%c exercise #97:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+// Create a function that returns the number of frames 
+// shown in a given number of minutes for a certain FPS.
+
+
+const frames = (a,b) => ( a * 60 ) * b; 
+
+console.log(frames(1,1)) // 60
+console.log(frames(10,1)) // 600
+console.log(frames(10,25)) // 15000
+
+
+console.log('%c exercise #98:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+// Create a function that takes two arguments. Both arguments are integers, a and b. 
+// Return true if one of them is 10 or if their sum is 10.
+
+const makesTen = ( a, b ) => ( a === 10 || b === 10 ) || ( a + b ) === 10  ? true : false; 
+
+
+console.log(makesTen(9, 10)) // true
+console.log(makesTen(9, 9)) // false
+console.log(makesTen(1, 9)) // true
+
+console.log('%c exercise #99:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+// Write a function that checks whether a person can watch an MA15+ rated movie. One of the following two conditions is required for admittance:
+
+// The person is at least 15 years old.
+// They have parental supervision.
+// The function accepts two parameters, age and isSupervised. Return a boolean.
+
+
+const acceptIntoMovie = ( n, bool ) => {
+  if( n < 15 && bool=== true){ return true}
+  if( n > 15 && bool=== true){ return true}
+  return false;
+}
+
+
+console.log(acceptIntoMovie(14, true)) // true
+console.log(acceptIntoMovie(14, false)) // false
+console.log(acceptIntoMovie(16, true)) // true
+
+console.log('%c exercise #100:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
 
 
 
 
 // ########################################
-}) // <----DOMContentLoaded close brackets
+ // <----DOMContentLoaded close brackets
