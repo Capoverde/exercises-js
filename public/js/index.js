@@ -1257,7 +1257,289 @@ console.log('%c exercise #100:',
 'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
 
 
+// Here's an image of four models. Some of the cubes are hidden behind other cubes. 
+// Model one consists of one cube. Model two consists of four cubes, and so on...
+// Write a function that takes a number n and returns the number of stacked boxes in a model n levels high,
+//  visible and invisible.
 
 
-// ########################################
- // <----DOMContentLoaded close brackets
+const stackBoxes = n => n*n;
+
+console.log(stackBoxes(1)) // 1
+console.log(stackBoxes(2)) // 4
+console.log(stackBoxes(0)) // 0
+console.log(stackBoxes(4)) // 16
+
+
+console.log('%c exercise #101:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+// A typical car can hold four passengers and one driver, 
+// allowing five people to travel around. Given n number of people, 
+// return how many cars are needed to seat everyone comfortably.
+
+
+carsNeeded = n => ( n / 5 ) % 2 !== 0 ? Math.floor(( n / 5 ) + 1) : ( n / 5 );
+
+console.log(carsNeeded(5)) // 1
+console.log(carsNeeded(11)) // 3
+console.log(carsNeeded(0)) // 0 
+
+console.log('%c exercise #102:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+// Create a function that takes an array and returns the types of values (data types) in a new array.
+
+const arrayValuesTypes = arr => arr.map(e=> typeof e)
+
+console.log(arrayValuesTypes([1, 2, "null", []])) // ["number", "number", "string", "object"]
+console.log(arrayValuesTypes(["214", true, false, 2, 2.15, [], null])) // ["string", "boolean", "boolean", "number", "number", "object", "object"]
+console.log(arrayValuesTypes([21.1, "float", "array", ["I am array"], null, true, 214])) // ["number", "string", "string", "object", "object", "boolean", "number"]
+
+
+console.log('%c exercise #103:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const stutter = str => `${str.slice(0,2)}... ${str.slice(0,2)}... ${str}?`
+
+
+console.log(stutter("incredible")) // "in... in... incredible?"
+console.log(stutter("enthusiastic")) // "en... en... enthusiastic?"
+console.log(stutter("outstanding")) // "ou... ou... outstanding?"
+
+console.log('%c exercise #104:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+// Given an array of integers, determine whether the sum of its elements is even or odd.
+// The return value should be a string ("odd" or "even").
+// If the input array is empty, consider it as an array with a zero ([0]).
+
+
+
+const evenOdd = arr => {
+  if(arr.length == 0){return `even`}
+  return arr.reduce( ( a, b ) => a + b ) % 2 == 0 ? `even` : `odd`
+}
+
+console.log(evenOdd([0])) // 'even'
+console.log(evenOdd([1])) // "odd"
+console.log(evenOdd([])) // "even"
+console.log(evenOdd([0,1,5])) // 'even'
+
+console.log('%c exercise #105:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+// Create a function that counts how many D's are in a sentence.
+
+const countDs = str => {
+  let Dsumm = 0;
+
+  for(let i = 0; i < str.length; i++){
+    if(str[i] === "D" || str[i] === 'd')
+    Dsumm++
+  }
+  return Dsumm;
+}
+
+console.log(countDs("My friend Dylan got distracted in school.")) // 4
+console.log(countDs("Debris was scattered all over the yard.")) // 3
+console.log(countDs("The rodents hibernated in their den.")) // 3
+
+console.log('%c exercise #106:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+// For each of the 6 coffee cups I buy, I get a 7th cup free. In total, I get 7 cups.
+//  Create a function that takes n cups bought and return as an integer the total number of cups I would get.
+
+
+const totalCups = n => n + Math.floor( n / 6 )
+
+console.log(totalCups(6)) // 7
+console.log(totalCups(12)) // 14
+console.log(totalCups(213)) // 248
+
+
+console.log('%c exercise #107:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const programmers = ( a, b, c ) => {
+  let s = [a,b,c].sort((a,b) => a - b)
+  return `${s[s.length - 1] - s[0]}`
+}
+ 
+console.log(programmers(147, 33, 526)) // 493
+console.log(programmers(33, 72, 74)) // 41
+console.log(programmers(1, 5, 9)) // 8
+
+
+console.log('%c exercise #108:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const sumCubes = n => {
+  let sum = 0;
+  for(let i=1; i <= n; i++){
+      sum += i ** 3
+  }
+  return sum;
+}
+
+console.log(sumCubes(7)) // 784
+console.log(sumCubes(8)) // 1296
+console.log(sumCubes(9)) // 2025
+
+console.log('%c exercise #109:', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+// Create a function that takes a number n and returns the first 10 multiples of n with 1 added to it, 
+// separated by commas.
+
+
+const nTablesPlusOne = n => {
+
+  let arr1 =[]
+
+  for(let i= 1; i < 10; i++){
+    arr1.push(n*i+1)
+  }
+  return arr1;
+}
+
+
+console.log(nTablesPlusOne(7)) // "8,15,22,29,36,43,50,57,64,71"
+console.log(nTablesPlusOne(1)) // "2,3,4,5,6,7,8,9,10,11"
+console.log(nTablesPlusOne(3)) // "4,7,10,13,16,19,22,25,28,31"
+
+
+console.log('%c exercise #110', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+// Create a function that takes a code of chess board square and return his color.
+
+const chessBoard = str => {
+ let splited = str.split("")
+  if(splited[0] === 'a' || splited[0] === 'c' || splited[0] === 'e' || splited[0] === 'g' && splited[1] % 2 !== 0){
+    return 'black'
+  }else if(splited[0] === 'b' || splited[0] === 'd' || splited[0] === 'f' || splited[0] === 'h' && splited[1] % 2 == 0){
+    return 'white'
+  }
+}
+
+console.log(chessBoard("a1")) // black
+console.log(chessBoard("e5")) // black
+console.log(chessBoard("d1")) // white
+
+console.log('%c exercise #111', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+// Create a function to multiply all of the values in an array by the amount of values in the given array.
+
+
+const multiplyByLe = arr => arr.map( e => e * arr.length )
+
+
+console.log(multiplyByLe([1,2,3,4])) // [4,8,12,16]
+console.log(multiplyByLe([5,6,8])) // [15, 16, 24]
+console.log(multiplyByLe([0])) // [0]
+console.log(multiplyByLe([1, 0, 3, 3, 7, 2, 1])) // [7, 0, 21, 21, 49, 14, 7]
+
+console.log('%c exercise #112', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+// Create a function that applies a discount d to every number in the array.
+
+const getDiscounts = ( arr, str ) => arr.map( e => ( e / 100 ) * Number(str.slice(0, -1)) )
+
+console.log(getDiscounts([2, 4, 6, 11], "50%")) // [1, 2, 3, 5.5]
+console.log(getDiscounts([10, 20, 40, 80], "75%")) // [7.5, 15, 30, 60]
+console.log(getDiscounts([100], "45%")) // [45]
+
+console.log('%c exercise #113', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+
+// Create a function that takes a number as an argument. Add up all the numbers from 1 
+// to the number you passed to the function. For example, 
+// if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
+
+
+const addUp = n => {
+  let colect = [];
+  for( let i = 1; i <= n; i++ ){
+    colect.push(i)
+  }
+  return colect.reduce((a,b) => a + b);
+}
+
+console.log(addUp(4)) // 10
+console.log(addUp(13)) // 91
+console.log(addUp(600)) // 180300
+
+console.log('%c exercise #114', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+// Create a function that takes a number as an argument, 
+// increments the number by +1 and returns the result.
+
+const addition = n => n += 1
+
+console.log(addition(0) )// 1
+console.log(addition(9) )// 10
+console.log(addition(-3)) //-2
+
+
+console.log('%c exercise #115', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const footballPoints = ( w, d, l ) => ( w * 3 ) + ( d * 1 ) + ( l * 0 )
+
+console.log(footballPoints(3, 4, 2)) // 13
+console.log(footballPoints(5, 0, 2)) // 15
+console.log(footballPoints(0, 0, 1)) // 0
+
+console.log('%c exercise #116', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+// Create a function that takes an integer and return true if it's divisible by 100, 
+// otherwise return false.
+
+const divisible = n => n % 100 === 0
+
+console.log(divisible(1)) // false
+console.log(divisible(1000)) // true
+console.log(divisible(100)) // true
+
+console.log('%c exercise #117', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const imposterFormula = ( i, p ) => `${Math.ceil(100 * ( i / p ))}%`
+
+console.log(imposterFormula(1, 10)) // 10%
+console.log(imposterFormula(2, 5)) // 40%
+console.log(imposterFormula(1, 8)) // 13%
+
+console.log('%c exercise #118', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/*
+* The 50-30-20 strategy is a simple way to budget, which involves spending 50% of after-tax income on needs,
+ 30% after tax income on wants, 
+and 20% after-tax income on savings or paying off debt.
+Given the after-tax income as ati, what you are supposed to do is to make a function that will return an object
+ that shows how much a person needs to spend on needs, wants, and savings.
+*/
+
+const fiftyThirtyTwenty = n => {
+  return { needs: n / 100 * 50, wants: n / 100 * 30, savings: n / 100 * 20 }
+}
+
+console.log(fiftyThirtyTwenty(10000)) // { "Needs": 5000, "Wants": 3000, "Savings": 2000 }
+console.log(fiftyThirtyTwenty(50000)) // { "Needs": 25000, "Wants": 15000, "Savings": 10000 }
+console.log(fiftyThirtyTwenty(13450)) // { "Needs": 6725, "Wants": 4035, "Savings": 2690 }
+
+console.log('%c exercise #119', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
