@@ -243,3 +243,17 @@ button {
   left: 0; }
 
 /*# sourceMappingURL=app.css.map */
+
+
+.output{
+  font-size: 20px;
+}
+
+table{
+  background: red;
+  padding: 10px;
+}
+
+tr{
+  margin: 10px;
+}

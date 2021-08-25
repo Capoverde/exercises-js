@@ -1543,3 +1543,562 @@ console.log(fiftyThirtyTwenty(13450)) // { "Needs": 6725, "Wants": 4035, "Saving
 console.log('%c exercise #119', 
 'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
 
+// Create a function, that will for a given a, b, c, do the following:
+
+
+const abcmath = ( a, b, c) => ( a * b) % c
+
+console.log(abcmath(5, 2, 1)) // true
+console.log(abcmath(1, 2, 3)) // false
+console.log(abcmath(7, 2, 14)) // true
+
+console.log('%c exercise #120', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+// Given a Rubik's Cube with a side length of n, return the number of individual stickers that are needed to cover the whole cube.
+
+const howManyStickers = n => `there are ${( n * 6 ) * n} stickers`
+
+console.log(howManyStickers(1)) // 2
+console.log(howManyStickers(2)) // 24
+console.log(howManyStickers(3)) // 54
+
+console.log('%c exercise #121', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+// Create a function that takes a positive integer n and returns the nth "star number".
+// A star number is a centered figurate number a centered hexagram (six-pointed star), 
+// such as the one that Chinese checkers is played on.
+
+const starNumber = n => 6 * n * ( n - 1 ) + 1
+
+console.log(starNumber(2))  // 2nd star number = 13
+console.log(starNumber(3))  // 3rd star number = 37
+console.log(starNumber(5))  // 5th star number = 121
+
+console.log('%c exercise #122', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Create a function that determines whether or not it's
+ *  possible to split a pie fairly given these three parameters:
+ * Total number of slices.
+   1. Number of recipients.
+   2. How many slices each person gets.
+   3. The function will be in this form:
+ * 
+   The function will be in this form:
+
+   equalSlices(total slices, no. recipients, slices each)
+ */
+
+const equalSlices = ( a, b, c ) => ( b * c ) <= a
+
+console.log(equalSlices(11, 5, 2)) // true
+console.log(equalSlices(11, 5, 3)) // false
+console.log(equalSlices(8, 3, 2)) // true
+console.log(equalSlices(8, 3, 3)) // false
+console.log(equalSlices(24, 12, 2)) // true
+
+console.log('%c exercise #123', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * You are given two numbers a and b.
+ *  Create a function that returns the next number greater than a and b and divisible by b.
+ */
+
+const divisibleByB = ( a, b ) => ( b - ( a % b ) ) + a;
+
+console.log(divisibleByB(17, 8)) // 24
+console.log(divisibleByB(98, 3) ) // 99
+console.log(divisibleByB(14, 11) ) // 22
+
+console.log('%c exercise #124', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const twoDigitSum = ( n ) => String(n).split('').map(e => Number(e)).reduce((a,b) => a + b)
+
+console.log(twoDigitSum(45)) // 9
+console.log(twoDigitSum(38)) // 11
+console.log(twoDigitSum(19810416)) // 30
+
+
+console.log('%c exercise #124', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+
+const  justAnotherSumProblem = ( a, b  ) => {
+
+  let res = 0;
+
+  if(a < b){
+    for(let i= a; i <= b ; i++){
+      res += i
+  }
+}else{
+  for(let i= b; i <= a ; i++){
+        res += i
+  }
+  return res;
+}
+}
+
+console.log(justAnotherSumProblem(-10, 1)) // -54
+console.log(justAnotherSumProblem(-20, 5)) // -195
+console.log(justAnotherSumProblem(90, 45)) // 3105
+
+console.log('%c exercise #125', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+const tooneDigit = ( n ) => n % 9 || n;
+  
+
+
+console.log(tooneDigit(19810416)) //
+console.log(tooneDigit(14)) //
+console.log(tooneDigit(9)) //
+console.log(tooneDigit(3256987984561354968)) //
+
+
+console.log('%c exercise #126', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Create a class that takes the following four arguments for a particular football player:
+
+name
+age
+height
+weight
+Also, create three functions for the class that returns the following strings:
+
+getAge() returns "name is age age"
+getHeight() returns "name is heightcm"
+getWeight() returns "name weighs weightkg"
+ */
+
+
+class Player {
+  constructor(name, age, height, year) {
+    this.name = name;
+    this.age = age;
+    this.height = height;
+    this.year = year;
+  }
+
+  getName (){
+    return `Player name is ${this.name}`
+  }
+
+  getAge (){
+    return `Player ${this.name} age is ${this.age}`
+  }
+
+  getHeight (){
+    return `Player ${this.name} height is ${this.height}`
+  }
+
+  getWeight (){
+    return `Player ${this.name} weight is ${this.year}`
+  }
+}
+
+p1 = new Player("David Jones", 25, 175, 75)
+
+console.log(p1.getName())
+console.log(p1.getAge())
+console.log(p1.getHeight())
+console.log(p1.getWeight())
+
+console.log('%c exercise #127', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Create functions for the Calculator class that can do the following:
+
+Add two numbers.
+Subtract two numbers.
+Multiply two numbers.
+Divide two numbers.
+ */
+
+class Calculator{
+ 
+
+  add(num1, num2){
+    return num1 + num2
+  }
+
+  subtract(num1, num2){
+    return num1 - num2
+  }
+
+  multiply(num1, num2){
+    return num1 * num2
+  }
+
+  divide(num1, num2){
+    return num1 / num2
+  }
+}
+
+let calculator = new Calculator()
+
+console.log(calculator.add(10, 5)) // 15
+console.log(calculator.subtract(10, 5)) // 5
+console.log(calculator.multiply(10, 5)) // 50
+console.log(calculator.divide(10, 5)) // 2
+
+console.log('%c exercise #128', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+class Point{
+  constructor(x,y){
+    this.x = x;
+    this.y = y;
+  }
+
+  toString(){
+    return `[x=${this.x}, y=${this.y}]`
+  }
+}
+
+let coords = new Point(1,2);
+
+console.log(coords.toString())
+
+console.log('%c exercise #129', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Write a class called Name and create the following attributes given a first name and last name (as fname and lname):
+
+An attribute called fullname which returns the first and last names.
+A attribute called initials which returns the first letters of the first and last name. Put a . between the two letters.
+Remember to allow the attributes fname and lname to be accessed individually as well.
+ */
+
+class Name{
+  constructor(name, lname){
+      this.name = name;
+      this.lname = lname;
+  }
+
+  getName =() => this.name;
+
+  full = () => `${this.name}  ${this.lname}`
+
+  getLname = () => this.lname;
+
+  initials = () => `${this.name.slice(0,1).toUpperCase()}.${this.lname.slice(0,1)}`
+}
+
+a1 = new Name("john", "SMITH")
+a2 = new Name("Adam", "Johnes")
+
+const out = document.querySelector('.output')
+
+out.innerHTML =`<table>
+  <tr>
+    <th>
+      Name:    
+    </th>
+    <th>
+      Last Name:
+    </th>
+    <th>
+      Full Name:
+    </th>
+    <th>
+      Initials:
+    </th>
+  </tr>
+  <tr>
+  <td>
+    ${a1.getName()}
+  </td>
+  <td>
+    ${a1.getLname()}
+  </td>
+  <td>
+    ${a1.full()}
+  </td>
+  <td>
+  ${a1.initials()}
+</td>
+  </tr>
+  <tr>
+   <td>
+    ${a2.getName()}
+   </td>
+   <td>
+    ${a2.getLname()}
+  </td>
+  <td>
+    ${a2.full()}
+  </td>
+  <td>
+    ${a2.initials()}
+  </td>
+  </tr>
+</table>`
+
+console.log(a1.getName())
+console.log(a1.full())
+console.log(a1.getLname())
+console.log(a1.initials())
+
+console.log('%c exercise #130', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Write a function that returns the string "something" joined with a space "
+ *  " and the given argument a.
+ */
+
+
+const giveMeSomething = ( str1 ) => `something ${str1}`
+
+console.log(giveMeSomething("is better than nothing")) // "something is better than nothing"
+console.log(giveMeSomething("Bob Jane")) // "something bob Jane"
+console.log(giveMeSomething("something")) // "something something"
+
+console.log('%c exercise #131', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**\
+ * Create a function that takes a number as its only argument and returns true if it's less than or equal to zero, 
+ * otherwise return false.
+ */
+
+const lessThanOrEqualToZero = n => n <= 0 ? true : false;
+
+console.log(lessThanOrEqualToZero(5)) // false
+console.log(lessThanOrEqualToZero(0)) // true
+console.log(lessThanOrEqualToZero(-2)) // true
+
+console.log('%c exercise #132', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * You are counting points for a basketball game, given the amount of 2-pointers scored and 3-pointers scored, 
+ * find the final points for the team and return that value.
+ */
+
+const points = ( a, b ) => ( a * 2 ) + ( b * 3 )
+
+console.log(points(1, 1)) // 5
+console.log(points(7, 5)) // 29
+console.log(points(38, 8)) // 100
+
+console.log('%c exercise #133', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Write a function that takes an integer minutes and converts it to seconds.
+ */
+
+const convert = n => n * 60;
+
+console.log(convert(5)) // 300
+console.log(convert(3)) // 180
+console.log(convert(2)) // 120
+
+console.log('%c exercise #134', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Given two numbers, return true if the sum of both numbers is less than 100. 
+ * Otherwise return false.
+ */
+
+const lessThan100 = ( a, b ) => ( a + b ) < 100 ? true : false;
+
+console.log(lessThan100(22, 15)) // true
+console.log(lessThan100(83, 34)) // false
+console.log(lessThan100(3, 77)) // true
+
+console.log('%c exercise #135', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Create a function that takes an array of numbers and return both the minimum and maximum 
+ * numbers, 
+ * in that order.
+ */
+
+const minMax1 = arr => [arr.sort((a,b)=> a-b)[0], arr.sort((a,b)=> b-a)[0]];
+
+
+console.log(minMax1([1, 2, 3, 4, 5])) // [1, 5]
+console.log(minMax1([2334454, 5])) //  [5, 2334454]
+console.log(minMax1([1])) // [1,1]
+
+console.log('%c exercise #136', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Create a function to return the amount of potatoes there are in a string.
+ */
+
+const potatoes = ( str ) => str.match(/potato/g).length;
+
+console.log(potatoes("potato")) // 1
+console.log(potatoes("potatopotato")) // 2
+console.log(potatoes("potatoapple")) // 1
+
+console.log('%c exercise #137', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Create a function that takes two strings as arguments and returns the number of times the
+ *  first string (the single character) is found in the second string.
+ */
+
+const charCount = ( str1, str2 ) => str2.split('').filter(e => e === str1).length
+
+//{
+//   let col = 0;
+//     for(let i=0 ; i < str2.length ; i++){
+//       if(str2[i] === str1){
+//         col += 1
+//       }
+//     }
+//  return col;
+// }
+
+console.log(charCount("a", "edabit")) // 1
+console.log(charCount("c", "Chamber of secrets")) // 1
+console.log(charCount("b", "big fat bubble")) // 4
+ 
+console.log('%c exercise #138', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Check if a string title is a title string or not. A title string is one which has all the 
+ * words in the string start with a upper case letter.
+ */
+
+const checkTitle = ( str ) =>  !/\b[a-z]/.test(str)
+
+console.log(checkTitle("A Mind Boggling Achievement")) // true
+console.log(checkTitle("A Simple Java Script Program!")) // true
+console.log(checkTitle("Water is transparent")) // false
+
+console.log('%c exercise #139', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * In this challenge you will be given a relation between two numbers, written as a string.
+ *  Write a function that determines if the relation is true or false.
+ */
+
+const isTrue = ( str ) => eval(str.replace('=', '==='))
+
+console.log(isTrue("2=2")) // true
+console.log(isTrue("8<7")) // flase
+console.log(isTrue("5=13")) // false
+console.log(isTrue("15>4")) // true
+
+console.log('%c exercise #140', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * This challenge will help you interpret mathematical
+ *  relationships both algebraically and geometrically.
+ * 
+ * Create a function that takes a number (step) as an argument and returns the number of 
+ * matchsticks in that step. See step 1, 2 and 3 in the image above.
+ * 
+ * https://edabit.com/challenge/tYHkTdFrEmWfxpPKF
+ */
+
+const matchHouses = ( n ) => ( n * 6 ) - n + 1
+
+console.log(matchHouses(1)) // 6
+console.log(matchHouses(4)) // 21
+console.log(matchHouses(87)) // 436
+console.log(matchHouses(3)) // 16
+
+console.log('%c exercise #141', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * The left shift operation is similar to multiplication by powers of two.
+
+Sample calculation using the left shift operator (<<):
+
+10 << 3 = 10 * 2^3 = 10 * 8 = 80
+-32 << 2 = -32 * 2^2 = -32 * 4 = -128
+5 << 2 = 5 * 2^2 = 5 * 4 = 20
+
+Write a function that mimics (without the use of <<) the left shift operator
+ and returns the result from the two given integers.
+ */
+
+ const shiftToLeft = ( a, b ) => a * 2 ** b;
+
+
+ console.log(shiftToLeft(5, 2)) // 20
+ console.log(shiftToLeft(10, 3)) // 80
+ console.log(shiftToLeft(-32, 2) ) // -128
+ console.log(shiftToLeft(-6, 5)) // -192
+ console.log(shiftToLeft(12, 4)) // 192
+ console.log(shiftToLeft(46, 6)) // 2944
+
+ console.log('%c exercise #142', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Your function will be passed two functions, f and g, that don't take any parameters
+ * Your function has to call them, and return a string which indicates which function returned the larger number.
+ * If f returns the larger number, return the string f.
+    If g returns the larger number, return the string g.
+    If the functions return the same number, return the string neither.
+ */
+
+    const whichIsLarger = ( f, g ) => f() > g() ? 'f': g() > f() ? 'g' : 'neither'
+
+console.log(whichIsLarger(() => 5, () => 10)) // "g"
+console.log(whichIsLarger(() => 25,  () => 25)) // "neither"
+console.log(whichIsLarger(() => 505050, () => 5050)) // "f"
+
+console.log('%c exercise #143', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Create a function that returns true if the first array can be nested inside the second.
+
+arr1 can be nested inside arr2 if:
+
+arr1's min is greater than arr2's min.
+arr1's max is less than arr2's max.
+ */
+
+const canNest = ( a1, a2 ) =>{
+  let sor1 = a1.sort((a,b) => a-b)
+  let sor2 = a2.sort((a,b) => a-b)
+  
+  return sor1[0] > sor2[0] && sor1[sor1.length -1] < sor2[sor2.length -1] ? true : false
+}
+
+console.log(canNest([1, 2, 3, 4], [0, 6])) // true
+console.log(canNest([3, 1], [4, 0])) // true
+console.log(canNest([9, 9, 8], [8, 9])) // flase
+console.log(canNest([1, 2, 3, 4], [2, 3])) // false
+
+console.log('%c exercise #144', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Write a function that takes a two-digit number and determines 
+ * if it's the largest of two possible digit swaps.
+ */
+
+const largestSwap = n => String(n) >= String(n).split('').reverse().join('')
+
+console.log(largestSwap(27)) // false
+console.log(largestSwap(43)) // true
+console.log(largestSwap(14)) // false
+console.log(largestSwap(99)) // true
