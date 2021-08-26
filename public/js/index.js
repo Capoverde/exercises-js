@@ -2183,3 +2183,117 @@ console.log(numberSplit(10)) // [5,5]
 console.log(numberSplit(11)) // [5,6]
 console.log(numberSplit(-9)) // [-5,-4]
 
+console.log('%c exercise 149 ', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a function that takes an array of non-negative integers 
+ * and strings and return a new array without the strings.
+ */
+const filterArray = arr => arr.filter(e => typeof e == "number") ;
+
+console.log(filterArray([1, 2, "a", "b"])) //  [1, 2]
+console.log(filterArray([1, "a", "b", 0, 15])) // [1, 0, 15]
+console.log(filterArray([1, 2, "aasf", "1", "123", 123])) // [1, 2, 123]
+
+console.log('%c exercise 150', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ * When resistors are connected together in series, the same current passes
+ *  through each resistor in the chain and the total resistance, RT, of the circuit must be equal to the sum of all the individual resistors added together. That is:
+
+RT = R1 + R2 + R3 ...
+Create a function that takes an array of values resistance that are connected in series,
+ and calculates the total resistance of the circuit in ohms. The ohm is the standard 
+ unit of electrical resistance in the International System of Units ( SI ). 
+ */
+const seriesResistance = arr => `${arr.reduce(( a, b ) => a + b, 0)} ohms` ;
+
+console.log(seriesResistance([1, 5, 6, 3])) // "15 ohms"
+console.log(seriesResistance([16, 3.5, 6])) // "25.5 ohms"
+console.log(seriesResistance([0.5, 0.5])) // "1.0 ohm"
+
+console.log('%c exercise 151', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  
+ */
+const error = n  => {
+return  obj ={
+    1 : "Check the fan: e1",
+    2 : "Emergency stop: e2",
+    3 : "Pump Error: e3",
+    4 : "c",
+    5 : "Temperature Sensor Error"
+  }[n]
+} ;
+
+console.log(error(1)) // "Check the fan: e1"
+console.log(error(2)) // "Emergency stop: e2"
+console.log(error(3)) // "Pump Error: e3"
+console.log(error(4)) // "c"
+console.log(error(5)) // "Temperature Sensor Error"
+
+console.log('%c exercise 152', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a function that takes a string and returns a string 
+ * in which each character is repeated once.
+ */
+const doubleChar = str => str.split('').map(e => e.repeat(2)).join('') ;
+
+console.log(doubleChar("String")) // "SSttrriinngg"
+console.log(doubleChar("Hello World!")) // "HHeelllloo  WWoorrlldd!!"
+console.log(doubleChar("1234!_ ")) // "11223344!!__  "
+
+console.log('%c exercise 153', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Try finding your ancestors and offspring with code.
+
+Create a function that takes a number x and a character y ("m" for male, "f" for female), 
+and returns the name of an ancestor (m/f) or descendant (m/f).
+
+If the number is negative, return the related ancestor.
+If positive, return the related descendant.
+You are generation 0. In the case of 0 (male or female), return "me!".
+ */
+const generation = ( num, s ) => {
+  if(s === "f"){
+   return ob1 = {
+     '-3': 'great grandmother',
+      '-2': 'grandmother',
+      '-1': 'mother',
+       0: 'me!',
+       1: 'daughter',
+       2: 'granddaughter',
+       3: 'great granddaughter'
+    }[num]
+  }else if(s === "m"){
+   return ob2 = {
+     '-3': 'great grandfather',
+      '-2': 'grandfather',
+      '-1': 'father',
+       0: 'me!',
+       1: 'son',
+       2: 'grandson',
+       3: 'great grandson'
+    }[num]
+  }
+}  ;
+
+console.log(generation(2, "f")) // "granddaughter"
+console.log(generation(-3, "m") ) // "great grandfather"
+console.log(generation(1, "f")) // "daughter"
+
+console.log('%c exercise 154', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a function that returns an array of strings sorted by length in ascending order.
+ */
+
+const sortByLength1 = arr => arr.sort(( a, b ) => a.length - b.length) ;
+
+console.log(sortByLength1(["a", "ccc", "dddd", "bb"])) // ["a", "bb", "ccc", "dddd"]
+console.log(sortByLength1(["apple", "pie", "shortcake"])) // ["pie", "apple", "shortcake"]
+console.log(sortByLength1(["may", "april", "september", "august"])) // ["may", "april", "august", "september"]
+console.log([]) // []
