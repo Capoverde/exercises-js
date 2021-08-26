@@ -2102,3 +2102,84 @@ console.log(largestSwap(27)) // false
 console.log(largestSwap(43)) // true
 console.log(largestSwap(14)) // false
 console.log(largestSwap(99)) // true
+
+console.log('%c exercise #145', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Create a function that always returns true for every item in a given array. However, 
+ * if an element is the word "flick", 
+ * switch to always returning the opposite boolean value.
+ */
+
+const flickSwitch = arr => {
+  let b = true;
+  return arr.map(x => x === 'flick' ? b = !b : b);
+};
+
+console.log(flickSwitch(["edabit", "flick", "eda", "bit"])) // [true, false, false, false]
+console.log(flickSwitch(["flick", 11037, 3.14, 53])) // [false, false, false, false]
+console.log(flickSwitch([false, false, "flick", "sheep", "flick"])) // [true, true, false, false, true]
+
+
+console.log('%c exercise #146', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ * Create a function that always returns true for every item in a given array. However, 
+ * if an element is the word "flick", 
+ * switch to always returning the opposite boolean value.
+ */
+ 
+const detectWord = ( str ) => str.split('').filter(e => e.match(/[a-z]/g)).join('');
+
+console.log(detectWord("UcUNFYGaFYFYGtNUH")) // cat
+console.log(detectWord("bEEFGBuFBRrHgUHlNFYaYr")) // "burglar"
+console.log(detectWord("YFemHUFBbezFBYzFBYLleGBYEFGBMENTment")) // "embezzlement"
+
+console.log('%c exercise 147', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a method in the Person class which returns how another person's age compares.
+ *  Given the instances p1, p2 and p3, which will be initialised with the attributes name and age, return a sentence in the following format:
+
+{other person name} is {older than / younger than / the same age as} me.
+ */
+
+class Person {
+	constructor(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+		
+	compareAge(other) {
+		if (this.age < other.age){
+			return `${other.name} is older than me.`
+		}else if (this.age > other.age){
+			return `${other.name} is younger than me.`
+		}else{
+			return `${other.name} is the same age as me.`
+		}
+	}
+}
+p1 = new Person("Samuel", 23)
+p2 = new Person("Joel", 36)
+p3 = new Person("Lily", 24)
+
+console.log(p1.compareAge(p2)) //  "Joel is older than me."
+console.log(p2.compareAge(p1)) // "Samuel is younger than me."
+console.log(p1.compareAge(p3)) // "Lily is the same age as me."
+
+console.log('%c exercise 148', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Given a number, return an array containing the two halves of the number. 
+ * If the number is odd, make the rightmost number higher.
+ */
+const numberSplit = n => ( n % 2 === 0) ?  [ n / 2, n /2] : [Math.floor(n / 2), Math.ceil(n /2)]
+
+console.log(numberSplit(4)) // [2,2]
+console.log(numberSplit(10)) // [5,5]
+console.log(numberSplit(11)) // [5,6]
+console.log(numberSplit(-9)) // [-5,-4]
+
