@@ -2512,3 +2512,70 @@ const isSubset = ( a1, a2 ) => {
 console.log(isSubset([3, 2, 5], [5, 3, 7, 9, 2])) // true
 console.log(isSubset([8, 9], [7, 1, 9, 8, 4, 5, 6])) // true
 console.log(isSubset([1, 2], [3, 5, 9, 1])) // false
+
+console.log('%c exercise 166 ', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a function that takes two numbers as arguments (num, length) 
+ * and returns an array of multiples of num until the array length reaches length.
+ */
+const arrayOfMultiples = ( n, len ) => {
+  let res =[]
+  for(let i= 1; i <= len ; i++){
+        res.push(i * n)
+  }
+  return res;
+} ;
+
+console.log(arrayOfMultiples(7, 5)) // [7, 14, 21, 28, 35]
+console.log(arrayOfMultiples(12, 10)) // [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+console.log(arrayOfMultiples(17, 6)) // [17, 34, 51, 68, 85, 102]
+
+console.log('%c exercise 167', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a function that counts the integer's number of digits.
+ */
+const count = n => Math.abs(n).toString().length ;
+
+console.log(count(318)) // 3
+console.log(count(-92563)) // 5
+console.log(count(4666)) // 4
+console.log(count(-314890)) // 6
+console.log(count(654321)) // 6
+console.log(count(638476)) // 6
+
+console.log('%c exercise 168 ', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a function which concantenates the number 7 to the end of every chord in an array. 
+ * Ignore all chords which already end with 7.
+ */
+
+const jazzify = arr => {
+  for(let i=0; i <arr.length ; i++){
+        if(arr[i].endsWith(7)){return arr}
+        
+        else{
+          return arr.map(e => e + '7')
+        }
+  }
+}
+
+console.log(jazzify(["G", "F", "C"])) // ["G7", "F7", "C7"]
+console.log(jazzify(["Dm", "G", "E", "A"])) // ["Dm7", "G7", "E7", "A7"]
+console.log(jazzify(["F7", "E7", "A7", "Ab7", "Gm7", "C7"])) // ["F7", "E7", "A7", "Ab7", "Gm7", "C7"]
+console.log(jazzify([])) // []
+
+console.log('%c exercise 169', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a function that takes a number (step) as an argument and returns the amount of boxes 
+ * in that step of the sequence.
+ */
+
+const boxSeq = n =>  (( n + 3) - 1) ;
+
+console.log(boxSeq(0)) // 0
+console.log(boxSeq(1)) // 3
+console.log(boxSeq(2)) // 2
