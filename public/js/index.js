@@ -2297,3 +2297,218 @@ console.log(sortByLength1(["a", "ccc", "dddd", "bb"])) // ["a", "bb", "ccc", "dd
 console.log(sortByLength1(["apple", "pie", "shortcake"])) // ["pie", "apple", "shortcake"]
 console.log(sortByLength1(["may", "april", "september", "august"])) // ["may", "april", "august", "september"]
 console.log([]) // []
+
+console.log('%c exercise 155', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ * Create a function that takes in an array of numbers and returns the sum of its cubes.
+ */
+const sumOfCubes1 = arr => arr.map(e => e ** 3).reduce(( a, b ) => a + b, 0) ;
+
+console.log(sumOfCubes1([1, 5, 9]) ) // 855
+console.log(sumOfCubes1([3, 4, 5])) // 216
+console.log(sumOfCubes1([2])) //  8
+console.log(sumOfCubes1([])) // 0
+
+console.log('%c exercise 156', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  According to the lodash documentation, _.dropRight Creates a slice of an array with n elements dropped from the end.
+
+This challenge requires you to write your own version of this function without using lodash so that you can better understand it works.
+ */
+// const dropRight = ( arr, n ) => {
+//   if( n === null ){ return }  
+
+// };
+
+// console.log(dropRight([1, 2, 3])) // [1,2]
+// console.log(dropRight([1, 2, 3], 2)) // [1]
+// console.log(dropRight([1, 2, 3], 5)) // []
+// console.log(dropRight([1, 2, 3], 0)) // [1,2,3]
+
+console.log('%c exercise 156', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a function that returns the number of hashes and pluses in a string.
+ */
+const hashPlusCount = str => [str.split('').filter(e=> e ==="#").length, str.split('').filter(e=> e ==="+").length] ;
+
+console.log(hashPlusCount("###+")) // [3,1]
+console.log(hashPlusCount("##+++#")) // [3,3]
+console.log(hashPlusCount("#+++#+#++#")) // [4,6]
+console.log(hashPlusCount("")) // [0,0]
+
+console.log('%c exercise 157 ', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+
+/**
+ *  Create a function that takes an array of arrays with numbers. 
+ * Return a new (single) array with the largest numbers of each.
+ */
+const findLargestNums = arr => {
+  let arr1 = arr[0].sort((a,b) => b-a)[0]
+  let arr2 = arr[1].sort((a,b) => b-a)[0]
+  let arr3 = arr[2].sort((a,b) => b-a)[0]
+
+  return [arr1, arr2, arr3]
+}
+
+console.log(findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]])) // [7, 90, 2]
+console.log(findLargestNums([[-34, -54, -74], [-32, -2, -65], [-54, 7, -43]])) //  [-34, -2, 7]
+console.log(findLargestNums([[0.4321, 0.7634, 0.652], [1.324, 9.32, 2.5423, 6.4314], [9, 3, 6, 3]])) // [0.7634, 9.32, 9]
+
+console.log('%c exercise 158', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  A set is a collection of unique items. A set can be formed from an array from removing all duplicate items.
+
+[1, 3, 3, 5, 5, 5]
+// original array
+
+[1, 3, 5]
+// original array transformed into a set
+Create a function that sorts an array and removes all duplicate items from it.
+ */
+
+const set = arr => [...new Set(arr)] ;
+
+console.log(set([1, 3, 3, 5, 5]) ) // [1, 3, 5]
+console.log(set([4, 4, 4, 4])) // [4]
+console.log(set([5, 7, 8, 9, 10, 15])) // [5, 7, 8, 9, 10, 15]
+console.log(set([3, 3, 3, 2, 1])) // [3, 2, 1]
+
+console.log('%c exercise 159', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  In this challenge, you must generate a sequence of consecutive numbers, from a lower bound that will always be equal to 1, up to a variable given higher bound (including the bounds in the sequence).
+
+Each number of the sequence that can be exactly divided by 4 must be amplified by 10 (see notes below).
+
+Given a higher bound num, implement a function that returns an array with the sequence of numbers, after that every multiple of 4 has been amplified.
+ */
+
+const amplify = arr => arr.filter(e=> e % 4 === 0) ;
+
+console.log(amplify([1, 2, 3, 40])) // 40
+console.log(amplify([1,2,3])) // 0
+console.log(amplify([1, 2, 3, 40, 5, 6, 7, 80, 9, 10, 11, 120, 13, 14, 15, 160, 17, 18, 19, 200, 21, 22, 23, 240, 25])) // [40, 80, 120, 160, 200, 240]
+
+console.log('%c exercise 160 ', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Given a string, create a function to reverse the case. 
+ * All lower-cased letters should be upper-cased, and vice versa.
+ */
+const reverseCase = str => {
+  let res ='';
+  for(let i=0; i <str.length ; i++){
+      if(str[i] === str[i].toUpperCase()){
+        res += str[i].toLowerCase()
+      }
+        else if(str[i] === str[i].toLowerCase()){
+          res += str[i].toUpperCase()
+        }
+  }
+  return res;
+} ;
+
+console.log(reverseCase("Happy Birthday")) // "hAPPY bIRTHDAY"
+console.log(reverseCase("MANY THANKS")) // "many thanks"
+console.log(reverseCase("sPoNtAnEoUs")) // "SpOnTaNeOuS"
+
+console.log('%c exercise 161', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  A value is omnipresent if it exists in every subarray inside the main array.
+ * [[3, 4], [8, 3, 2], [3], [9, 3], [5, 3], [4, 3]]
+// 3 exists in every element inside this array, so is omnipresent.
+ */
+// const isOmnipresent = ( arr, n ) => {
+//   for(let i=0; i < arr.length; i++){
+//     if(arr[i].every(n)){return true}
+//   }
+// return false;
+// } ;
+
+// console.log(isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 1)) // true
+// console.log(isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 6)) // false
+// console.log(isOmnipresent([[5], [5], [5], [6, 5]], 5)) // true
+// console.log(isOmnipresent([[5], [5], [5], [6, 5]], 6)) // false
+
+console.log('%c exercise 162', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a function that takes an array as an argument and returns true or false depending 
+ * on whether the average 
+ * of all elements in the array is a whole number or not.
+ */
+const isAvgWhole1 = arr =>  arr.reduce(( a, b ) => a + b, 0) % arr.length === 0;
+
+console.log(isAvgWhole1([1, 3])) // true
+console.log(isAvgWhole1([1, 2, 3, 4])) // false
+console.log(isAvgWhole1([1, 5, 6])) // true
+console.log(isAvgWhole1([1, 1, 1])) // true
+console.log(isAvgWhole1([9, 2, 2, 5])) // false
+
+console.log('%c exercise 163', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a function to count the number of 1s in a 2D array.
+ */
+const countOnes = arr => arr.flat().filter(e => e===1).length ;
+
+console.log(countOnes([
+  [1, 0],
+  [0, 0]
+])) // 1
+console.log(countOnes([
+  [1, 1, 1],
+  [0, 0, 1],
+  [1, 1, 1]
+])) // 7
+console.log(countOnes([
+  [1, 2, 3],
+  [0, 2, 1],
+  [5, 7, 33]
+])) // 2
+
+console.log('%c exercise 164', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Write a function that takes all even-indexed characters and odd-indexed 
+ * characters from a string and concatenates them together.
+ */
+const indexShuffle = str => {
+  let s = str.split('')
+  let odd =[]
+  let ev =[]
+
+  for(let i=0; i <s.length ; i+=2){
+        odd.push(s[i])
+  }
+  for(let i = s.length; i > 0  ; i-=2){
+    ev.push(s[i])
+}
+  return [odd.join(''), ev.reverse().join('')].concat().join('');
+}
+
+console.log(indexShuffle("abcdefg")) // "acegbdf"
+console.log(indexShuffle("holiday")) // "hldyoia"
+console.log(indexShuffle("maybe")) // "myeab"
+
+console.log('%c exercise 165', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Create a function that returns true if the first array 
+ * is a subset of the second. Return false otherwise
+ */
+const isSubset = ( a1, a2 ) => {
+  let c = a1.concat(a2)
+  let n = [ ... new Set(c)] 
+  return n.length === a2.length ? true : false;
+}
+
+console.log(isSubset([3, 2, 5], [5, 3, 7, 9, 2])) // true
+console.log(isSubset([8, 9], [7, 1, 9, 8, 4, 5, 6])) // true
+console.log(isSubset([1, 2], [3, 5, 9, 1])) // false
