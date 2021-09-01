@@ -3289,3 +3289,44 @@ return res.reduce((a,b) => a+b) * arr[arr.length -1];
 console.log(evenLast([])) // 0
 console.log(evenLast([1, 3, 3, 1, 10])) // 140
 console.log(evenLast([-11, 3, 3, 1, 10])) //20
+
+console.log('%c exercise 211', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Suppose an image can be represented as a 2D array of 0s and 1s. Write 
+ * a function to reverse an image. Replace the 0s with 1s and vice versa.
+ */
+
+// NIE WIEM JAKIM CUDEM TO DZIAŁA????
+
+const reverseImage = arr => {
+  for(let i=0 ; i <arr.length ; i++){
+        for(let j=0; j < arr[i].length; j++){
+              if(arr[i][j]==0){
+                (arr[i][j] +=1)
+              }else{
+                (arr[i][j] -=1)
+              }
+        }
+  }
+  return arr;
+}
+
+
+
+console.log(reverseImage([[1, 0, 0],[0, 1, 0],[0, 0, 1]])) // [[0, 1, 1],[1, 0, 1],[1, 1, 0]]
+console.log(reverseImage([[1, 1, 1],[0, 0, 0]])) // [[0, 0, 0],[1, 1, 1]]
+console.log(reverseImage([[1, 0, 0],[1, 0, 0]])) // [[0, 1, 1],[0, 1, 1]]
+
+console.log('%c exercise 212', 
+'color:goldenrod; font-size:20px;padding:10px; background:#000000; margin:10px 0;')
+/**
+ *  Write a function that takes an array and returns
+ *  a new array with unique positive (more than 0) numbers.
+ */
+
+const uniqueArr = arr => [...new Set(arr)].filter(e=> e > 0) ;
+
+console.log(uniqueArr([-5, 1, -7, -5, -2, 3, 3, -5, -1, -1])) // [1, 3]
+console.log(uniqueArr([3, -3, -3, 5, 5, -6, -2, -4, -1, 3])) // [3, 5]
+console.log(uniqueArr([10, 6, -12, 13, 5, 5, 13, 6, 5])) //  [10, 6, 13, 5]
